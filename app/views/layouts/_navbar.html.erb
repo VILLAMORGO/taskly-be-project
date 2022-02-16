@@ -1,0 +1,11 @@
+<header class="w-full h-14 border border-black absolute top-0 left-0 bg-black">
+    <div class="container">
+        <nav class="flex items-center w-full h-14 justify-end ml-72">
+            <ul class="flex flex-row content-center w-2/6 justify-evenly text-xl text-red">
+            <li > <%= link_to "Home", root_path %></li>
+            <li> <%= link_to "Create New Task", new_task_path %></li>
+            <li> <%= link_to "My Task", tasks_path %></li>
+            </ul>
+        </nav>
+    </div>
+</header>
