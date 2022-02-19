@@ -1,11 +1,24 @@
-<header class="w-full h-14 border border-black absolute top-0 left-0 bg-black">
+<header class="w-full h-16 border border-black absolute top-0 left-0 bg-black">
     <div class="container">
-        <nav class="flex items-center w-full h-14 justify-end ml-72">
-            <ul class="flex flex-row content-center w-2/6 justify-evenly text-xl text-red">
-            <li > <%= link_to "Home", root_path %></li>
+        <nav class="flex items-center w-full h-16 justify-end ml-72">
+            <ul class="flex flex-row content-center w-4/6 justify-evenly text-xl text-red">
+            <li > <%= link_to "Home", root_path, class: "text-green-500" %></li>
             <li> <%= link_to "Create New Task", new_task_path %></li>
             <li> <%= link_to "My Task", tasks_path %></li>
+            <li> 
+            
+                <% if account_signed_in? %>
+                    <p class="text-lg text-white">Logged in as <strong><%= current_account.email %></strong></p>.
+                    <%= link_to 'Edit profile', edit_account_registration_path %> |
+                    <%= link_to "Logout", destroy_account_session_path, method: :delete %>
+                <% else %>
+                    <%= link_to "Sign up", new_account_registration_path  %> |
+                    <%= link_to "Login", new_account_session_path %>
+                <% end %>
+
+            </li>
             </ul>
         </nav>
+        
     </div>
 </header>
