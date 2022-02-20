@@ -1,4 +1,4 @@
-<header class="w-full h-16 absolute top-0 left-0 bg-[#a97f68]">
+<header class="w-full h-16 absolute top-0 left-0 bg-black">
     <div class="flex flex-row w-full">
         <%= image_tag "sensetasklogo.png", class: "sensetask_logo h-14 m-auto ml-28"%>
         <nav class="flex justify-self-end items-center w-full h-16 justify-end">
@@ -10,7 +10,7 @@
             
                 <% if account_signed_in? %>
                     <div class="flex justify-evenly">
-                        <p class="text-lg text-black"><strong><%= current_account.email %></strong></p>
+                        <p class="text-lg text-gray-400"><strong><%= current_account.email %></strong></p>
                         <%= link_to 'Edit profile', edit_account_registration_path %> |
                         <%= link_to "Logout", destroy_account_session_path, method: :delete, class:"text-blue-600" %>
                     </div>
