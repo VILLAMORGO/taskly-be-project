@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-screen w-full bg-white">
   <head>
     <title>Sense Task</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,14 +13,14 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5">
+    <main class="flex flex-col mx-auto mt-28 bg-white">
       <%= render "layouts/navbar" %>
-      <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
+          <% if notice %>
+            <p class="alert alert-success notices bg-green-100"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger notices bg-red-100"><%= alert %></p>
+          <% end %>
       <%= yield %>
     </main>
   </body>
